@@ -170,7 +170,7 @@ else
     CrosshairS = Lerp(speed*FrameTime(),CrosshairS,40)
   end
 if !LocalPlayer():InVehicle() and !LocalPlayer():KeyDown(IN_ATTACK2) then
-  surface.DrawCircle(ScrW()/2,ScrH()/2,SizeW(CrosshairS), 255, 255,255, 10)
+  surface.DrawCircle(ScrW()/2,ScrH()/2,sw(CrosshairS), 255, 255,255, 10)
 end
 end
 end
