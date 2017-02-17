@@ -53,6 +53,7 @@ b:SetPos( (tpa:GetWide()/2)-((tpa:GetWide()/2)/2),sh(5) )
 b:SetText("Toggle Thirdperson")
 b.DoClick = function() enabled=!enabled print("Third Person Created By L3M0N\nhttp://steamcommunity.com/id/wwhitehouse") end
 end
+if credits!="L3M0N" then return end
 hook.Add("OnContextMenuOpen","tpaopen", CreateThirdPersonAdjuster)
 hook.Add("OnContextMenuClose","tpaclose",function() if tpa then tpa:Remove() end end)
 
@@ -61,7 +62,7 @@ hook.Add("OnContextMenuClose","tpaclose",function() if tpa then tpa:Remove() end
 
 if credits!="L3M0N" then return end
 function CalcView(ply, pos, angles, fov)
-  if enabled == true then
+  if enabled == true and !ply:InVehicle() then
     local view = {}
     lrp_forward = Lerp(speed*FrameTime(),lrp_forward,100)
     if enabled!=true then
