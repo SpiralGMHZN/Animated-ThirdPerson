@@ -5,7 +5,7 @@ local credits="L3M0N" -- DO NOT CHANGE THIS AT ALL
 
 -- Chat Command
 local chat_enabled = false
-local chat_commands = ["!thirdperson","/thirdperson"]
+local chat_commands = {"!thirdperson","/thirdperson"}
 
 
 if CLIENT then
@@ -64,8 +64,7 @@ if credits!="L3M0N" then return end
 hook.Add("OnContextMenuOpen","tpaopen", CreateThirdPersonAdjuster)
 hook.Add("OnContextMenuClose","tpaclose",function() if tpa then tpa:Remove() end end)
 hook.Add( "OnPlayerChat", "tpaopen", function( ply, strText )
-	if chat_enabled!=true then return end -- COMMENT THIS LINE OUT TO ADD CHAT COMMAND
-    if ply == LocalPlayer() then
+    if ply == LocalPlayer() and chat_enabled == true then
     strText = string.lower( strText ) 
 	if ( table.HasValue(chat_commands,strText) ) then ToggleThirdPerson() return "" end
     end
