@@ -1,10 +1,9 @@
 -- L3M0N Designed
---#NoSimplerr#
 local credits="L3M0N" -- DO NOT CHANGE THIS AT ALL
 
 
 -- Chat Command
-local chat_enabled = false
+local chat_enabled = true
 local chat_commands = {"!thirdperson","/thirdperson"}
 
 
