@@ -18,7 +18,7 @@ hook.Add("HUDShouldDraw", "RemoveCrosshair_", function(name)
 	if cr[name] then return false end
 end)
 
-function ToggleThirdPerson() enabled=!enabled end
+function ToggleThirdPerson() enabled=!enabled print("Third Person Made By L3M0N") end
 	
 local myscrw, myscrh = 1768,992
 print("Third Person Created By L3M0N\nhttp://steamcommunity.com/id/wwhitehouse")
@@ -55,7 +55,7 @@ local b = vgui.Create("DButton",tpa)
 b:SetSize(tpa:GetWide()/2,sh(20))
 b:SetPos( (tpa:GetWide()/2)-((tpa:GetWide()/2)/2),sh(5) )
 b:SetText("Toggle Thirdperson")
-b.DoClick = function() enabled=!enabled print("Third Person Created By L3M0N\nhttp://steamcommunity.com/id/wwhitehouse") end
+b.DoClick = function() ToggleThirdPerson() end
 end
 if credits!="L3M0N" then return end
 hook.Add("OnContextMenuOpen","tpaopen", CreateThirdPersonAdjuster)
