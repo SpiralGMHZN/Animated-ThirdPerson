@@ -2,6 +2,8 @@
 --#NoSimplerr#
 local credits="L3M0N" -- DO NOT CHANGE THIS AT ALL
 
+-- Comment Line 64 Out To Add A Chat Command
+
 
 if CLIENT then
   local enabled=false
@@ -58,6 +60,13 @@ end
 if credits!="L3M0N" then return end
 hook.Add("OnContextMenuOpen","tpaopen", CreateThirdPersonAdjuster)
 hook.Add("OnContextMenuClose","tpaclose",function() if tpa then tpa:Remove() end end)
+hook.Add( "OnPlayerChat", "tpaopen", function( ply, strText )
+	if true then return end -- COMMENT THIS LINE OUT TO ADD CHAT COMMAND
+    if ply == LocalPlayer() then
+    strText = string.lower( strText ) 
+	if ( strText == "!thirdperson" or "/thirdperson" ) then ToggleThirdPerson() return "" end
+    end
+    end  )
 
 
 
