@@ -16,6 +16,8 @@ hook.Add("HUDShouldDraw", "RemoveCrosshair_", function(name)
 	if cr[name] then return false end
 end)
 
+function ToggleThirdPerson() enabled=!enabled end
+	
 local myscrw, myscrh = 1768,992
 print("Third Person Created By L3M0N\nhttp://steamcommunity.com/id/wwhitehouse")
 function sw(width) local screenwidth = myscrw return width*ScrW()/screenwidth end
