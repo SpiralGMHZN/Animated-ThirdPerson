@@ -55,7 +55,7 @@ tpa:SetDraggable(false)
 tpa:ShowCloseButton(false)
 local b = vgui.Create("DButton",tpa)
 b:SetSize(tpa:GetWide()/2,sh(20))
-b:SetPos( (tpa:GetWide()/2)-((tpa:GetWide()/2)/2),sh(5) )
+b:SetPos( (tpa:GetWide()/2)-((tpa:GetWide()/2)/2),sh(55) )
 b:SetText("Toggle Thirdperson")
 b.DoClick = function() ToggleThirdPerson() end
 end
